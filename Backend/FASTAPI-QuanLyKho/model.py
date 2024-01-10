@@ -11,7 +11,6 @@ class ProductSchema(Base):
     __tablename__="Products"
     Id = Column(Integer, primary_key=True, index=True)
     productId= Column(String)
-    hasBeenDeleted=Column(String)
     supplierId = Column(String)
     productName = Column(String(100))
     categoryId = Column(String(45))
@@ -20,6 +19,9 @@ class ProductSchema(Base):
     description = Column(String)
     quantity = Column(Integer)
     unitPrice = Column(Integer)
+    hasBeenDeleted=Column(String)
+    status=Column(String)
+
 
 #Nhà cung cấp
 class SuppliersSchema(Base):
@@ -35,7 +37,11 @@ class SuppliersSchema(Base):
 class OrdersSchema(Base):
     __tablename__="Orders"
     orderId = Column(Integer, primary_key=True, index=True)
-    customerId = Column(Integer)
+    productId=Column(Integer)
+    quantityProduct=Column(Integer)
+    customerName = Column(String)
+    phoneNumber=Column(String)
+    address=Column(String)
     orderDate = Column(Date)
     status = Column(String(20))
 

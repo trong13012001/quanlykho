@@ -14,7 +14,7 @@ from model import UserSchema
 import schema
 from database import SessionLocal, engine
 import model
-from Routers import login,user,products,category,suppliers
+from Routers import login,user,products,category,suppliers,orders
 import uuid
 
 app = FastAPI()
@@ -36,9 +36,6 @@ app.include_router(suppliers.router, tags=['Suppiler Controller'], prefix='')
 # app.include_router(grade.router, tags=['Grade Controller'], prefix='')
 # app.include_router(bill.router, tags=['Bill Controller'], prefix='')
 
-# #Môn học và năm học
-# app.include_router(major.router, tags=['Major Controller'], prefix='')
-# app.include_router(branch.router, tags=['Branch Controller'], prefix='')
-# app.include_router(subject.router, tags=['Subject Controller'], prefix='')
-# app.include_router(year.router, tags=['Year Controller'], prefix='')
-# app.include_router(term.router, tags=['Term Controller'], prefix='')
+# Đơn hàng
+app.include_router(orders.router, tags=['Orders Controller'], prefix='')
+
