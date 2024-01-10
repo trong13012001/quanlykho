@@ -242,7 +242,7 @@ def get_all_products_with_category(
         db.query(ProductSchema)
         .filter(ProductSchema.quantity > 0, ProductSchema.hasBeenDeleted == 0)
     )
-
+#dadad
     if categoryId:
         query = query.filter(ProductSchema.categoryId == categoryId)
 
